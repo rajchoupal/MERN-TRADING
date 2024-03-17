@@ -1,0 +1,40 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+
+const TradeForm = ({ type }) => {
+  const [symbol, setSymbol] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const handleTrade = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/api/trades/execute', { symbol, quantity, type });
+      setSuccessMessage(response.data.message);
+    } catch (error) {
+      setError(error.response.data.message);
+    }
+  };
+
+  return (
+    <div>
+      <h2>{type === 'buy' ? 'Buy' : 'Sell'}</h2>
+      {error && <div className="error">{error}</div>}
+      {successMessage && <div className="success">{successMessage}</div>}
+      <form onSubmit={handleTrade}>
+        <div>
+          <label>Symbol:</label>
+          <input type="text" value={symbol} onChange={(e) => setSymbol(e.target.value)} required />
+        </div>
+        <div>
+          <label>Quantity:</label>
+          <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} required />
+        </div>
+        <button type="submit">{type === 'buy' ? 'Buy' : 'Sell'}</button>
+      </form>
+    </div>
+  );
+};
+
+export default TradeForm;

@@ -1,0 +1,101 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar styles */
+aside {
+  background-color: #f4f4f4;
+  width: 200px;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+aside nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+aside nav ul li {
+  margin-bottom: 0.5rem;
+}
+
+aside nav ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+aside nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main content styles */
+main {
+  margin-left: 220px; /* Adjust based on the sidebar width */
+  padding: 1rem;
+}
+
+/* Form styles */
+form {
+  margin-top: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Error and success messages */
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}

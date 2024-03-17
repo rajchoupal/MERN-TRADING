@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for the trading platform",
+  "main": "index.js",
+  "scripts": {
+    "client-install": "npm install --prefix frontend",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix frontend",
+    "frontend": "cd frontend && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run frontend \""
+  },
+  "keywords": [],
+  "author": "raj choupal",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.18.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.12.7",
+    "node": "^21.7.1",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
